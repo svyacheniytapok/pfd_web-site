@@ -44,12 +44,10 @@ document.querySelectorAll(".button").forEach(btn => {
   });
 });
 
-
 // ==========================
 // LOGO MICRO ANIMATION
 // ==========================
 const logo = document.querySelector(".logo");
-
 if (logo) {
   setInterval(() => {
     logo.style.transform = "scale(1.04)";
@@ -60,15 +58,17 @@ if (logo) {
 }
 
 // ==========================
-// BURGER MENU
+// BURGER MENU (MOBILE)
 // ==========================
 const burger = document.getElementById("burger");
 const nav = document.querySelector(".nav");
 
-burger.addEventListener("click", () => {
-  burger.classList.toggle("active");
-  nav.classList.toggle("active");
-});
+if (burger && nav) { // проверка для безопасности
+  burger.addEventListener("click", () => {
+    burger.classList.toggle("active");
+    nav.classList.toggle("active");
+  });
+}
 
 // ==========================
 // PARALLAX EFFECT
