@@ -107,10 +107,13 @@ if (logo) {
 const burger = document.getElementById("burger");
 const nav = document.querySelector(".nav");
 
-burger.addEventListener("click", () => {
-  burger.classList.toggle("active");
-  nav.classList.toggle("active");
-});
+if (burger && nav) { // проверка, чтобы не было ошибок
+  burger.addEventListener("click", () => {
+    burger.classList.toggle("active");
+    nav.classList.toggle("active");
+  });
+}
+
 
 // ==========================
 // PARALLAX EFFECT
@@ -122,3 +125,4 @@ window.addEventListener("scroll", () => {
     section.style.backgroundPositionY = offset * speed + "px";
   });
 });
+
