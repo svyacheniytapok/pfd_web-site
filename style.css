@@ -394,3 +394,22 @@ footer a:hover::after {
   section, .preis-box { padding: 18px; }
   .button { width: 100%; text-align: center; }
 }
+
+
+/* из твоего CSS */
+@media (max-width: 768px) {
+  .nav {
+    display: none;
+    flex-direction: column;
+    margin-top: 15px;
+  }
+
+  .nav.active {
+    display: flex; /* вот это обязательно */
+  }
+
+  .burger {
+    display: flex;
+    cursor: pointer;
+  }
+}
