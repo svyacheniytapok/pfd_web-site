@@ -9,18 +9,21 @@
 </head>
 <body>
 
+<!-- ========================= HEADER ========================= -->
 <header class="header">
   <div class="header-left">
     <img src="photo_web.png" alt="Pflegedienst Logo" class="logo">
     <span class="title">Vertrauen, Individualität, Qualität</span>
   </div>
 
-  <div class="burger" id="burger">
+  <!-- Бургер меню для мобильных -->
+  <div id="burger" class="burger">
     <span></span>
     <span></span>
     <span></span>
   </div>
 
+  <!-- Навигация -->
   <nav class="nav">
     <a href="index.html">Startseite</a>
     <a href="leistungen.html">Leistungen</a>
@@ -29,44 +32,51 @@
   </nav>
 </header>
 
+<!-- ========================= MAIN ========================= -->
 <main>
-    <!-- Секция приветствия -->
     <section>
         <h2>Willkommen bei unserem Pflegedienst</h2>
-        <p>
-            <p><strong>Wir sind Ihr zuverlässiger Partner bei allen Fragen rund um die Pflege</strong></p>
-            <ul>
-                <li><strong>Verhinderungspflege, Vertretung der Pflegeperson, Urlaubsvertretung.<br></strong>
-                    Ihre pflegenden Angehörigen haben Anspruch auf Urlaub. Dies macht das Pflegeversicherungsgesetz möglich,<br>
-                     um den Angehörigen eine kleine Ruhepause zu gönnen. In dieser Zeit übernehmen wir Ihre Pflege und Betreuung.</li><br>
+        <p><strong>Wir sind Ihr zuverlässiger Partner bei allen Fragen rund um die Pflege</strong></p>
+        <ul>
+            <li><strong>Verhinderungspflege, Vertretung der Pflegeperson, Urlaubsvertretung.</strong><br>
+                Ihre pflegenden Angehörigen haben Anspruch auf Urlaub. Dies macht das Pflegeversicherungsgesetz möglich, um den Angehörigen eine kleine Ruhepause zu gönnen. In dieser Zeit übernehmen wir Ihre Pflege und Betreuung.</li>
 
-                     <li><strong>24 - Stunden Rufbereitschaft<br></strong>
-                    Wir sind rund um die Uhr an 365 Tagen telefonisch für Sie erreichbar.</li><br>
+            <li><strong>24 - Stunden Rufbereitschaft</strong><br>
+                Wir sind rund um die Uhr an 365 Tagen telefonisch für Sie erreichbar.</li>
 
-                    <li><strong>Beratungseinsatz nach § 37 Abs. 3 (SGB XI)<br></strong>
-                    Dieser Besuch dient der Beratung und die Hilfestellung für die pflegende Angehörigen.<br>
-                    Die Kosten für diesen Beratungseinsatz trägt die Pflegekasse.</li><br>
+            <li><strong>Beratungseinsatz nach § 37 Abs. 3 (SGB XI)</strong><br>
+                Dieser Besuch dient der Beratung und Hilfestellung für die pflegenden Angehörigen. Die Kosten trägt die Pflegekasse.</li>
 
-                    <li><strong>Wir bieten Ihnen auch Hilfe<br></strong>
-                    bei der gerechten Einstufung (Pflegestufe), Feststellung der Pflegebedürftigkeit und ggf. Widerspruch.</li><br>
+            <li><strong>Hilfe bei der Einstufung</strong><br>
+                Unterstützung bei der gerechten Einstufung (Pflegestufe), Feststellung der Pflegebedürftigkeit und ggf. Widerspruch.</li>
 
-                    <li><strong>Unsere Kooperationspartner:<br></strong>
-                    Essen auf Räder, Notrufsysteme, Krankentransporte, Sanitätshäuser, Physiotherapeuten, Fußpflege und Frisörsalon.</li><br>
+            <li><strong>Unsere Kooperationspartner:</strong><br>
+                Essen auf Räder, Notrufsysteme, Krankentransporte, Sanitätshäuser, Physiotherapeuten, Fußpflege und Frisörsalon.</li>
 
-                    <li>Falls Sie weitere Fragen haben, können Sie uns über den Bereich <a href="kontakt.html">Kontakt</a> erreichen.</li>
-            </ul>
-        </p>
+            <li>Falls Sie weitere Fragen haben, können Sie uns über den Bereich <a href="kontakt.html">Kontakt</a> erreichen.</li>
+        </ul>
     </section>
 </main>
 
+<!-- ========================= FOOTER ========================= -->
 <footer>
     <p>© 2025 Ambulanter Pflegedienst Hand in Hand</p>
-     <a href="impressum.html">Impressum</a> |
-        <a href="datenschutz.html">Datenschutz</a>
+    <a href="impressum.html">Impressum</a> |
+    <a href="datenschutz.html">Datenschutz</a>
 </footer>
 
-<script src="script.js"></script>
+<!-- ========================= JS ========================= -->
+<script>
+const burger = document.getElementById("burger");
+const nav = document.querySelector(".nav");
+
+if (burger && nav) {
+  burger.addEventListener("click", () => {
+    burger.classList.toggle("active");
+    nav.classList.toggle("active");
+  });
+}
+</script>
+
 </body>
 </html>
-
-
