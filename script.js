@@ -1,3 +1,45 @@
+// Обработка формы записи
+document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('termin-form');
+
+    if(form) {
+        form.addEventListener('submit', function(e) {
+            e.preventDefault(); // Не перезагружать страницу
+
+            // Получаем значения
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const date = document.getElementById('date').value;
+
+            // Показываем сообщение
+            alert(`Vielen Dank, ${name}! Wir haben Ihre Anfrage für den ${date} erhalten. Wir melden uns bald per E-Mail (${email}).`);
+
+            form.reset(); // Очистка формы
+        });
+    }
+});
+
+(function () {
+  emailjs.init("PUBLIC_KEY"); // из EmailJS
+})();
+
+document.getElementById("terminForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  emailjs.sendForm(
+    "SERVICE_ID",
+    "TEMPLATE_ID",
+    this
+  ).then(() => {
+    document.getElementById("status").innerText =
+      "Danke! Ihre Anfrage wurde gesendet.";
+    this.reset();
+  }, (error) => {
+    document.getElementById("status").innerText =
+      "Fehler beim Senden.";
+  });
+});
+
 // ==========================
 // SCROLL ANIMATION (SECTIONS)
 // ==========================
@@ -44,10 +86,12 @@ document.querySelectorAll(".button").forEach(btn => {
   });
 });
 
+
 // ==========================
 // LOGO MICRO ANIMATION
 // ==========================
 const logo = document.querySelector(".logo");
+
 if (logo) {
   setInterval(() => {
     logo.style.transform = "scale(1.04)";
@@ -58,17 +102,15 @@ if (logo) {
 }
 
 // ==========================
-// BURGER MENU (MOBILE)
+// BURGER MENU
 // ==========================
 const burger = document.getElementById("burger");
 const nav = document.querySelector(".nav");
 
-if (burger && nav) { // проверка для безопасности
-  burger.addEventListener("click", () => {
-    burger.classList.toggle("active");
-    nav.classList.toggle("active");
-  });
-}
+burger.addEventListener("click", () => {
+  burger.classList.toggle("active");
+  nav.classList.toggle("active");
+});
 
 // ==========================
 // PARALLAX EFFECT
