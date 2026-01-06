@@ -1,47 +1,16 @@
-// ==========================
-// DOMContentLoaded для безопасности
-// ==========================
 document.addEventListener('DOMContentLoaded', () => {
 
   // ==========================
-  // ОБРАБОТКА ФОРМЫ ЗАПИСИ
+  // BURGER MENU
   // ==========================
-  const form = document.getElementById('termin-form');
+  const burger = document.getElementById("burger");
+  const nav = document.querySelector(".nav");
 
-  if (form) {
-    form.addEventListener('submit', function(e) {
-      e.preventDefault();
-
-      const name = document.getElementById('name').value;
-      const email = document.getElementById('email').value;
-      const date = document.getElementById('date').value;
-
-      alert(`Vielen Dank, ${name}! Wir haben Ihre Anfrage für den ${date} erhalten. Wir melden uns bald per E-Mail (${email}).`);
-      form.reset();
+  if (burger && nav) {
+    burger.addEventListener("click", () => {
+      burger.classList.toggle("active");
+      nav.classList.toggle("active");
     });
-  }
-
-  // ==========================
-  // EMAILJS
-  // ==========================
-  if (typeof emailjs !== "undefined") {
-    emailjs.init("PUBLIC_KEY");
-
-    const terminForm = document.getElementById("terminForm");
-    if (terminForm) {
-      terminForm.addEventListener("submit", function(e) {
-        e.preventDefault();
-
-        emailjs.sendForm("SERVICE_ID", "TEMPLATE_ID", this)
-          .then(() => {
-            document.getElementById("status").innerText = "Danke! Ihre Anfrage wurde gesendet.";
-            this.reset();
-          })
-          .catch(() => {
-            document.getElementById("status").innerText = "Fehler beim Senden.";
-          });
-      });
-    }
   }
 
   // ==========================
@@ -97,27 +66,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ==========================
-  // BURGER MENU
-  // ==========================
-  const burger = document.getElementById("burger");
-  const nav = document.querySelector(".nav");
-
-  if (burger && nav) {
-    burger.addEventListener("click", () => {
-      burger.classList.toggle("active");
-      nav.classList.toggle("active");
-    });
-
-    // Закрываем меню при клике на ссылку
-    nav.querySelectorAll("a").forEach(link => {
-      link.addEventListener("click", () => {
-        burger.classList.remove("active");
-        nav.classList.remove("active");
-      });
-    });
-  }
-
-  // ==========================
   // PARALLAX EFFECT
   // ==========================
   window.addEventListener("scroll", () => {
@@ -128,4 +76,4 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-}); // конец DOMContentLoaded
+});
