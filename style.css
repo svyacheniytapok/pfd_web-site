@@ -345,21 +345,65 @@ footer a:hover::after {
    BURGER MENU MOBILE FIX
 ========================= */
 @media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+  }
+
+  .header-left {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .logo {
+    max-height: 70px;
+  }
+
+  .title {
+    font-size: 20px;
+  }
+
   .burger {
-    display: flex; /* показываем бургер */
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    cursor: pointer;
     margin-top: 10px;
   }
 
+  .burger span {
+    width: 28px;
+    height: 3px;
+    background: white;
+    border-radius: 3px;
+    transition: all 0.4s ease;
+  }
+
+  .burger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+  }
+
+  .burger.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .burger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+  }
+
   .nav {
-    display: none; /* скрываем меню по умолчанию */
-    flex-direction: column;
+    display: none;
     width: 100%;
-    text-align: center;
+    flex-direction: column;
     margin-top: 15px;
+    text-align: center;
+    background: linear-gradient(135deg, #0d47a1, #1976d2);
+    border-radius: var(--border-radius);
   }
 
   .nav.active {
-    display: flex; /* показываем при клике на бургер */
+    display: flex;
   }
 
   .nav a {
@@ -367,12 +411,49 @@ footer a:hover::after {
     font-size: 18px;
     color: white;
     font-weight: 600;
-    background: linear-gradient(135deg, #0d47a1, #1976d2);
     border-top: 1px solid rgba(255,255,255,0.1);
     transition: background 0.3s;
   }
 
   .nav a:hover {
     background: linear-gradient(135deg, #1976d2, #0d47a1);
+  }
+
+  main {
+    padding: 25px;
+  }
+
+  section,
+  .preis-box {
+    padding: 25px;
+  }
+
+  .preise-container {
+    grid-template-columns: 1fr;
+    padding: 0 15px;
+  }
+
+  .contact-box p {
+    font-size: 16px;
+  }
+
+  .contact-box h2 {
+    font-size: 18px;
+  }
+
+  .map-container {
+    padding-bottom: 50%;
+  }
+}
+
+@media (max-width: 480px) {
+  section,
+  .preis-box {
+    padding: 18px;
+  }
+
+  .button {
+    width: 100%;
+    text-align: center;
   }
 }
